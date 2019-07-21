@@ -15,9 +15,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
+import org.springframework.stereotype.Component;
+
 import com.luizalabs.quake.logparser.model.Game;
 import com.luizalabs.quake.logparser.model.Player;
 
+@Component
 public class LogParser {
 
 	private final String KILLER = "killer";

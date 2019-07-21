@@ -2,10 +2,19 @@ package com.luizalabs.quake.logparser.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Player implements Serializable {
 
 	private static final long serialVersionUID = 1231922581795881337L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
 	private Long kills;
 
@@ -18,6 +27,21 @@ public class Player implements Serializable {
 		super();
 		this.name = name;
 		this.kills = kills;
+	}
+	
+	public Player(Long id, String name, Long kills) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.kills = kills;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -48,6 +72,7 @@ public class Player implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", kills=" + kills + "]";
+		return "Player [id=" + id + ", name=" + name + ", kills=" + kills + "]";
 	}
+
 }
