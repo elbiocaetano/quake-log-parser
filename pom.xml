@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.luizalabs</groupId>
-	<artifactId>quake.log.parser</artifactId>
+	<artifactId>quake-log-parser</artifactId>
 	<version>1.0.0</version>
 	<name>quake-log-parser-ec</name>
 	<description>Project that parses a quake III game log and expose the results through a REST API</description>
