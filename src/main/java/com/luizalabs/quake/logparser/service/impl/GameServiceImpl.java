@@ -4,7 +4,6 @@ import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.luizalabs.quake.logparser.model.Game;
@@ -27,9 +26,9 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public Page<Game> findAll(Integer offset, Integer limit, String orderBy, String direction) {
+	public Page<Game> findAll(Integer offset, Integer limit) {
 		Page<Game> page = this.gameRepository
-				.findAll(PageRequest.of(offset, limit, Direction.fromString(direction), orderBy));
+				.findAll(PageRequest.of(offset, limit));
 		if (page.isEmpty()) {
 			throw new ObjectNotFoundException(null, Game.class.getName());
 		}

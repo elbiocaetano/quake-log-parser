@@ -33,11 +33,9 @@ public class GameController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<ResponseDTO> findAll(@RequestParam(value = "offset", defaultValue = "0") Integer offset,
-			@RequestParam(value = "limit", defaultValue = "10") Integer limit,
-			@RequestParam(value = "orderBy", defaultValue = "id") String orderBy,
-			@RequestParam(value = "direction", defaultValue = "ASC") String direction) {
+			@RequestParam(value = "limit", defaultValue = "10") Integer limit) {
 
-		return ResponseEntity.ok(this.gameParser.map(this.gameService.findAll(offset, limit, orderBy, direction)));
+		return ResponseEntity.ok(this.gameParser.map(this.gameService.findAll(offset, limit)));
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
