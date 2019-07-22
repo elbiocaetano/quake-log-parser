@@ -33,7 +33,7 @@ public class QuakeLogParserApplication {
 	public void seedDatabaseAfterStartup() {
 		try {
 			List<Game> games = logParser.parse(FILE_PATH);
-			games.forEach(game -> this.gameService.save(game));
+			games.forEach(this.gameService::save);
 
 		} catch (IOException e) {
 			e.printStackTrace();

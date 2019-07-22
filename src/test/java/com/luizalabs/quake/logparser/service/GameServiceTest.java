@@ -1,4 +1,4 @@
-package com.luizalabs.quake.logparser.test;
+package com.luizalabs.quake.logparser.service;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.times;
@@ -76,7 +76,7 @@ public class GameServiceTest {
 		assertTrue(savedGame.getPlayers().get(0).getName() == "João");
 		assertTrue(savedGame.getPlayers().get(0).getKills() == 2l);
 	}
-	
+
 	@Test
 	public void saveGameWithManyUserSucess() {
 		Game game = new Game(null, 5l, this.getListWithManyPlayers());
@@ -96,15 +96,15 @@ public class GameServiceTest {
 		assertTrue(savedGame.getPlayers().get(0).getId() == 1l);
 		assertTrue(savedGame.getPlayers().get(0).getName() == "João");
 		assertTrue(savedGame.getPlayers().get(0).getKills() == 2l);
-		
+
 		assertTrue(savedGame.getPlayers().get(1).getId() == 2l);
 		assertTrue(savedGame.getPlayers().get(1).getName() == "Maria");
 		assertTrue(savedGame.getPlayers().get(1).getKills() == 3l);
-		
+
 		assertTrue(savedGame.getPlayers().get(2).getId() == 3l);
 		assertTrue(savedGame.getPlayers().get(2).getName() == "Fulano");
 		assertTrue(savedGame.getPlayers().get(2).getKills() == 0l);
-		
+
 		assertTrue(savedGame.getPlayers().get(3).getId() == 4l);
 		assertTrue(savedGame.getPlayers().get(3).getName() == "Sicrano");
 		assertTrue(savedGame.getPlayers().get(3).getKills() == 0l);
@@ -123,7 +123,7 @@ public class GameServiceTest {
 		players.add(player);
 		return players;
 	}
-	
+
 	private List<Player> getListWithManyPlayers() {
 		List<Player> players = new ArrayList<>();
 		players.add(new Player("João", 2l));
@@ -132,7 +132,7 @@ public class GameServiceTest {
 		players.add(new Player("Sicrano", 0l));
 		return players;
 	}
-	
+
 	private List<Player> getListWithManySavedPlayers() {
 		List<Player> players = new ArrayList<>();
 		players.add(new Player(1l, "João", 2l));
