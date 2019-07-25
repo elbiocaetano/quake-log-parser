@@ -118,7 +118,7 @@ mvn clean install
 ```
 mvn clean package
 ```
-This will generate a target folder with a jar named `cagef-[version].jar`. For example: `cagef-2.0.0.jar`;
+This will generate a target folder with a jar named `quake-log-parser-[version].jar`. For example: `quake-log-parser-2.0.0.jar`;
 
 To start the server run the following command
 
